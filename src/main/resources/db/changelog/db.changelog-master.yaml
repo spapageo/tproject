@@ -1,0 +1,74 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: spapageo
+    changes:
+    - createTable:
+        tableName: EMPLOYEE
+        columns:
+        - column:
+            name: id
+            type: number
+            constraints:
+              nullable: false
+              primaryKey: true
+        - column:
+            name: email
+            type: varchar(200)
+            constraints:
+              nullable: false
+              unique: true
+        - column:
+            name: first_name
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: last_name
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: company_name
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: address
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: city
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: country
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: postal
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: phone1
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: phone2
+            type: varchar(200)
+            constraints:
+              nullable: false
+        - column:
+            name: web
+            type: varchar(200)
+            constraints:
+              nullable: false
+    - sql:
+        splitStatements: true
+        sql: create sequence EMPLOYEE_SEQ start with 1 increment by 50 NOMAXVALUE NOCYCLE
+
